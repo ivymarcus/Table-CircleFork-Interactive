@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圈圈叉叉-互動版</title>
+</head>
+
+<style>
+    td {    
+        width: 100px;
+        text-align: center;
+        cursor: pointer;    
+    } 
+        
+</style>
+
+
+<script>
+    var flag = true;
+
+    function SetPoint(obj) {
+        if(obj.innerText != "_") return;    //有O X時就不能更換
+
+        if (flag) {
+            obj.innerText = 'O';
+            flag = false;
+        }
+        else {
+            obj.innerText = 'X';
+            flag = true;
+        }
+
+    }
+</script>
+
+<body>
+    <div style="font-size: 80px">
+        <table border="1" style="width: 300px ; height: 300px">
+            <!-- border顯示框線 -->
+            <caption>
+                <h4 style="font-size: 30px">圈圈叉叉-互動版</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td id="c1" style="width: 100px" onclick="SetPoint(document.getElementById('c1'))">_</td>
+                    <td id="c2" style="width: 100px" onclick="SetPoint(document.getElementById('c2'))">_</td>
+                    <td id="c3" style="width: 100px" onclick="SetPoint(document.getElementById('c3'))">_</td>
+
+                </tr>
+                <tr>
+                    <td id="c4" onclick="SetPoint(document.getElementById('c4'))">_</td>
+                    <td id="c5" onclick="SetPoint(document.getElementById('c5'))">_</td>
+                    <td id="c6" onclick="SetPoint(document.getElementById('c6'))">_</td>
+
+                </tr>
+                <tr>
+                    <td id="c7" onclick="SetPoint(document.getElementById('c7'))">_</td>
+                    <td id="c8" onclick="SetPoint(document.getElementById('c8'))">_</td>
+                    <td id="c9" onclick="SetPoint(document.getElementById('c9'))">_</td>
+
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</body>
+
+</html>
